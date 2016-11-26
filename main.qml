@@ -23,7 +23,7 @@ Window {
                     console.log("clicked stae: " + clicked)
                 }
 
-//                color:index % 2 == 0 ? "black" : "white"
+                color:index % 2 == 0 ? "black" : "white"
             }
         }
         Repeater {

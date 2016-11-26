@@ -23,6 +23,10 @@ public slots:
     // QQuickItem interface
 protected:
     void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+
+    // QQuickItem interface
+protected:
+    void mousePressEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
 };
 
 #endif // SQUARE_H

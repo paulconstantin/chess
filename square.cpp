@@ -6,6 +6,7 @@ Square::Square(QQuickItem *parent)
       m_clicked(false)
 {
     setColor(Qt::yellow);
+    setAcceptedMouseButtons(Qt::LeftButton);
 }
 
 bool Square::getClicked()
@@ -16,18 +17,13 @@ bool Square::getClicked()
 void Square::mouseReleaseEvent(QMouseEvent *event)
 {
     qDebug()<<"bla bla inside mouseReleaseEvent";
-    if (event->button() == Qt::LeftButton)
-    {
-        m_clicked = !m_clicked;
-        emit clickedChanged();
-    }
+    m_clicked = !m_clicked;
+    emit clickedChanged();
+    event->accept();
+
 }
 
-//void Square::setClicked(bool clicked)
-//{
-//    if(m_clicked != clicked)
-//    {
-//        m_clicked = clicked;
-//        emit clickedChanged();
-//    }
-//}
+void Square::mousePressEvent(QMouseEvent *event)
+{
+    event->accept();
+}
